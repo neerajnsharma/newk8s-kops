@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld
+    name: helloworld-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        -name: k8s-demo
+        image: wardviaene/k8s-demo
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: nodejs-port
+          initialDelays: 15
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 30
+        ports:
+          - name: nodejs-port
+            containerPort: 3000
