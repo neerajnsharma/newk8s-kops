@@ -1,0 +1,4 @@
+kops create cluster --name=thetechexpert.xyz --state=s3://kops-state-neeraj --zones=us-east-1a --node-count=2 --node-size=t2.micro --master-size=t2.micro --dns-zone=thetechexpert.xyz
+kops update cluster thetechexpert.xyz --state=s3://kops-state-neeraj --yes
+kops edit cluster thetechexpert.xyz --state=s3://kops-state-neeraj 
+kops delete cluster thetechexpert.xyz --state=s3://kops-state-neeraj --yes
