@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: helloworld-service
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:region:accountid:certificate/..." #replace this value
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:us-east-1:954603344051:certificate/28a3c10e-d72e-411c-8d93-63b0df66ee97" #replace this value
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
     service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"

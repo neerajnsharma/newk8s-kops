@@ -2,7 +2,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   namespace: default
-  name: pod-writer
+  name: pod-reader
 rules:
 - apiGroups: [""]
   resources: ["pods"]
@@ -14,13 +14,13 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: write-pods
+  name: read-pods
   namespace: default
 subjects:
 - kind: User
-  name: edward
+  name: neeraj
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
-  name: pod-writer
+  name: pod-reader
   apiGroup: rbac.authorization.k8s.io

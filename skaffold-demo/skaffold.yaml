@@ -2,7 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-  - image: wardviaene/skaffold-demo
+  - image: neerajnsharma/skaffold-demo-code
 deploy:
   kubectl:
     manifests:

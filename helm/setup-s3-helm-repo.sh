@@ -6,7 +6,7 @@ set -e
 RANDOM_STRING=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | tr '[:upper:]' '[:lower:]' | head -n 1)
 
 # it's important to set the AWS_REGION if not set. Change the default
-DEFAULT_REGION="eu-west-1"
+DEFAULT_REGION="us-east-1"
 AWS_REGION="${AWS_REGION:-${DEFAULT_REGION}}"
 
 export AWS_REGION
